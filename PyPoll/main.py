@@ -8,7 +8,7 @@ def output_data(vTotal):
     for votes in vTotal.keys():
         tot = tot + vTotal[votes]
     for per in vTotal.keys():
-        p = '{0:.3f}'.format(vTotal[per] / tot * 100)
+        p = '{0:.3f}'.format(vTotal[per] / tot * 100) #format to get trailing zero's
         inStr = str(per) + ": " + str(p) + "% (" + str(vTotal[per]) + ")"
         outList.append(inStr)
     lStr = max(outList, key = len)
