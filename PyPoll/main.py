@@ -4,7 +4,7 @@ import os
 def output_data(vTotal):
     tot = 0
     outList = []
-    key_max = max(vTotal.keys(), key=(lambda k: vTotal[k]))
+    key_max = max(vTotal.keys(), key=(lambda k: vTotal[k])) # get's the key of the largest value in dict
     for votes in vTotal.keys():
         tot = tot + vTotal[votes]
     for per in vTotal.keys():
@@ -12,7 +12,7 @@ def output_data(vTotal):
         inStr = str(per) + ": " + str(p) + "% (" + str(vTotal[per]) + ")"
         outList.append(inStr)
     lStr = max(outList, key = len)
-    outFile = open("election_results.txt", 'w', newline = '')
+    outFile = open("election_results.txt", 'w')
     outFile.write("Election Results" + "\n")
     print("Election Results")
     outFile.write("-" * len(lStr) + "\n")
